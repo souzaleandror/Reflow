@@ -18,7 +18,7 @@ VARADM1 = Admin.create(fullname: "John Lennon", email: "admin@admin.com", passwo
 VARADM2 = Admin.create(fullname: "Paul McCartney", email: "adm@admin.com", password: "admin123", sign_in_count: 1, current_sign_in_at: "01/01/2019", last_sign_in_at: "01/01/2019", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "`127.0.0.1", confirmed_at: "01/01/2019", confirmation_sent_at: "01/01/2019", unconfirmed_email: "")
 VARADM3 = Admin.create(fullname: "Ringo Starr", email: "user@admin.com", password: "admin123", sign_in_count: 1, current_sign_in_at: "01/01/2019", last_sign_in_at: "01/01/2019", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "`127.0.0.1", confirmed_at: "01/01/2019", confirmation_sent_at: "01/01/2019", unconfirmed_email: "")
 VARADM4 = Admin.create(fullname: "George Harrison", email: "example@admin.com", password: "admin123", sign_in_count: 1, current_sign_in_at: "01/01/2019", last_sign_in_at: "01/01/2019", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "`127.0.0.1", confirmed_at: "01/01/2019", confirmation_sent_at: "01/01/2019", unconfirmed_email: "")
-VARADM4 = Admin.create(fullname: "Demo demo", email: "demo@admin.com", password: "admin123", sign_in_count: 1, current_sign_in_at: "01/01/2019", last_sign_in_at: "01/01/2019", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "`127.0.0.1", confirmed_at: "01/01/2019", confirmation_sent_at: "01/01/2019", unconfirmed_email: "")
+VARADM5 = Admin.create(fullname: "Demo demo", email: "demo@admin.com", password: "admin123", sign_in_count: 1, current_sign_in_at: "01/01/2019", last_sign_in_at: "01/01/2019", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "`127.0.0.1", confirmed_at: "01/01/2019", confirmation_sent_at: "01/01/2019", unconfirmed_email: "")
 puts 'END ADMIN'
 
 puts 'START DEPARTMENT'
