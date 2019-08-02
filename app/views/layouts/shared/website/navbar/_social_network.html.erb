@@ -1,0 +1,125 @@
+<div class="social_network d-inline">
+<% if ((defined? @v_company) and (not @v_company.blank?)) %>
+	<% if !@v_company.facebook.blank? %>
+		<a href="<%= @v_company.facebook %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-facebook-square fa-1x" title="Facebook - <%= @v_company.facebook %>" alt="Facebook - <%= @v_company.facebook %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_company.twitter.blank? %>
+		<a href="<%= @v_company.twitter %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-twitter-square fa-1x" title="Twitter - <%= @v_company.twitter %>" alt="Twitter - <%= @v_company.twitter %>"></i>
+		</a>
+	<% end %>
+
+	<% if !@v_company.instagram.blank? %>
+		<a href="<%= @v_company.instagram %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-instagram fa-1x" title="Instagram - <%= @v_company.instagram %>" alt="Instagram - <%= @v_company.instagram %>"></i>
+		</a>
+	<% end %>	
+	
+	<% if !@v_company.google_plus.blank? %>
+		<a href="<%= @v_company.google_plus %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-google-plus-square fa-1x" title="Google+ - <%= @v_company.google_plus %>" alt="Google+ - <%= @v_company.google_plus %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_company.linkedin.blank? %>
+		<a href="<%= @v_company.linkedin %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-linkedin-square fa-1x" title="Linkedin - <%= @v_company.linkedin %>" alt="Linkedin - <%= @v_company.linkedin %>"></i>
+		</a>
+	<% end %>
+
+	<% if !@v_company.youtube.blank? %>
+		<a href="<%= @v_company.youtube %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-youtube-square fa-1x" title="Youtube - <%= @v_company.youtube %>" alt="Youtube - <%= @v_company.youtube %>"></i>
+		</a>
+	<% end %>
+
+	<% if !@v_company.github.blank? %>
+		<a href="<%= @v_company.github %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-github-square fa-1x" title="Github - <%= @v_company.github %>" alt="Github - <%= @v_company.github %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_company.pinterest.blank? %>
+		<a href="<%= @v_company.pinterest %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-pinterest-square fa-1x" title="Pinterest - <%= @v_company.pinterest %>" alt="Pinterest - <%= @v_company.pinterest %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_company.whatsapp.blank? %>
+		<a href="<%= @v_company.whatsapp %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-whatsapp fa-1x" title="Whatsapp - <%= @v_company.whatsapp %>" alt="Whatsapp - <%= @v_company.whatsapp %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_company.telegram.blank? %>
+		<a href="<%= @v_company.telegram %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-telegram fa-1x" title="Telegram - <%= @v_company.telegram %>" alt="Telegram - <%= @v_company.telegram %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_company.rss.blank? %>
+		<a href="<%= @v_company.rss %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-rss fa-1x" title="Telegram - <%= @v_company.rss %>" alt="Telegram - <%= @v_company.rss %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_company.ecommerce.blank? %>
+		<a href="<%= @v_company.ecommerce %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-at fa-1x" title="Telegram - <%= @v_company.ecommerce %>" alt="Telegram - <%= @v_company.ecommerce %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_company.wordpress.blank? %>
+		<a href="<%= @v_company.wordpress %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-wordpress fa-1x" title="Telegram - <%= @v_company.wordpress %>" alt="Telegram - <%= @v_company.wordpress %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_company.website.blank? %>
+		<a href="<%= @v_company.website %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-globe fa-1x" title="Website - <%= @v_company.website %>" alt="Website - <%= @v_company.website %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_intern_company.link_work_us.blank? %>
+		<a href="<%= @v_intern_company.link_work_us %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-briefcase fa-1x" title="Work us - <%= @v_intern_company.link_work_us %>"  alt="Work us - <%= @v_intern_company.link_work_us %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_company.blogger.blank? %>
+		<a href="<%= @v_company.blogger %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-archive fa-1x" title="Blog - <%= @v_company.blogger %>" alt="Blog - <%= @v_company.blogger %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_intern_company.link_android.blank? %>
+		<a href="<%= @v_intern_company.link_android %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-android fa-1x" title="Android - <%= @v_intern_company.link_android %>" alt="Android - <%= @v_intern_company.link_android %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_intern_company.link_ios.blank? %>
+		<a href="<%= @v_intern_company.link_ios %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-apple fa-1x" title="IOS - <%= @v_intern_company.link_ios %>" alt="IOS - <%= @v_intern_company.link_ios %>"></i>
+		</a>
+	<% end %>
+	
+	<% if !@v_company.contact_email.blank? %>
+		<a href="mailto:<%= @v_company.contact_email %>" target="_Blank" class="tc ml-3 text-secondary">
+			<i class="fa fa-envelope fa-1x" title="<%= @v_company.contact_email %> - <%= @v_company.contact_email %>"></i>
+		</a>
+	<% end %>
+	
+	<%# if !@v_company.telephone.blank? %>
+		<%#= @v_company.telephone %>
+	<%# end %>
+	
+	<%# if !@v_company.cellphone.blank? %>
+		<%#= @v_company.cellphone %>
+	<%# end %>
+<% end %>
+</div>

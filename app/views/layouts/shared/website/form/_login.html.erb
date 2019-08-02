@@ -1,0 +1,86 @@
+<!-- Modal -->
+<div class="modal fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLogin" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLogin">
+          <%= t('login') %>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+      <div class="col-auto text-left mt-2">
+        <% if @v_intern_company.login_user_facebook %>
+        <a href="#" class="btn btn-primary w95 text-left btn-lg">
+          <i class="fa fa-facebook fa-lg mr-3" aria-hidden="true"></i>
+          <%#= t('login_with') %> Facebook
+        </a>
+        <% end %>
+        <% if @v_intern_company.login_user_google %>
+        <a href="#" class="btn btn-success w95 mt-2 text-left btn-lg">
+          <i class="fa fa-google fa-lg mr-3" aria-hidden="true"></i>
+          <%#= t('login_with') %> Google
+        </a>
+        <% end %>
+      </div>
+        
+        <%= form_for(resource, as: resource_name, local: true, url: session_path(resource_name), html: { id: 'form_login' }) do |f| %>
+          <div class="col-auto mt-2">
+            <label class="sr-only" for="form_login_email">
+              <%= t('email') %>
+            </label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend" for="form_login_email">
+                <div class="input-group-text">
+                  <i class="fa fa-envelope"></i>
+                </div>
+              </div>
+              <%= f.email_field :email, class: 'form-control', autocomplete: 'email', placeholder: t('p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_login_email', 'data-purpose' => 'email', 'aria-invalid' => 'true' %>
+            </div>
+          </div>
+          <div class="col-auto">
+            <label class="sr-only" for="form_login_password">
+              <%= t('password') %>
+            </label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <%= f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: t('p_password'), required: true,  pattern: '.{6,64}', maxlength: 64, minlength: 6, id: 'form_login_password', 'data-purpose' => 'password', 'aria-invalid' => 'true' %>
+            </div>
+          </div>
+          <div class="col-auto text-center mt-3">
+            <div class="form-check">
+              <%= f.check_box :remember_me, id: 'form_login_remember_me' %>
+              <label class="form-check-label ml-1" for="form_login_remember_me">
+                <%= t('remember_me') %>
+              </label>
+            </div>
+          </div>
+          
+          <div class="col-auto text-center mt-3">
+            <%= f.submit t('btn_login'), class: "btn btn-primary w90", id: 'form_login_btn_login' %>
+          </div>
+        <% end %>
+        <div class="col-auto text-center mt-3">
+          <a href="#" class="tc" data-dismiss="modal" data-toggle="modal" data-target="#ModalForgetPassword">
+            <%= t('forget_password') %>
+          </a>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <p>
+          <%= t('dont_have_a_account') %> ?
+          <a href="#" class="tc" data-dismiss="modal" data-toggle="modal" data-target="#ModalRegister">
+            <%= t('register') %> 
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

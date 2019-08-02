@@ -1,0 +1,79 @@
+<!-- Modal -->
+<div class="modal fade" id="ModalProfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalProfile" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalProfile">
+          <%= t('profile') %>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for(resource, as: resource_name, local: true, url: users_update_path, html: { id: 'form_profile', method: :put }) do |f| %>
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup">
+              <%= t('full_name') %>
+            </label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-user"></i>
+                </div>
+              </div>
+              <%= f.text_field :full_name, class: 'form-control', placeholder: t('p_full_name'), required: true, pattern: '.{3,64}', maxlength: 64, minlength: 3, id: 'form_profile_full_name', 'data-purpose' => 'full_name', 'aria-invalid' => 'true', value: current_user.full_name %>
+            </div>
+          </div>
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup">
+              <%= t('email') %>
+            </label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-envelope"></i>
+                </div>
+              </div>
+                <%= f.email_field :email, class: 'form-control', placeholder: t('p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_profile_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', value: current_user.email, 'disabled' => true %>
+            </div>
+          </div>
+          <div class="col-auto text-center mt-3">
+            <div class="form-check">
+              <%= f.check_box :newsletter, class: 'form-check-input', :checked => current_user.newsletter, id: 'form_profile_newsletter' %>
+              <label class="form-check-label" for="form_profile_newsletter">
+                <%= t('register_newsletter') %>
+              </label>
+            </div>
+          </div>
+          
+          <div class="col-auto text-center mt-3">
+            <%= f.submit t('update_information_user'), class: "btn btn-primary w90", id: 'form_profil_btn_update' %>  
+          </div>
+          
+          <div class="col-auto text-center mt-3">
+            <p>
+              By signing in, you agree to our 
+              <%= link_to t('term_user'), term_user_path, target: '_blank', class: 'tc' %> and 
+              <%= link_to t('privacy_policy'), privacy_policy_path, target: '_blank', class: 'tc' %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <%= form_for(resource, as: resource_name, local: true, url: registration_path(current_user), html: { method: :delete }) do |f| %>
+          <%= f.submit t('delete_account'), class: 'btn btn-danger ml-auto', data: { confirm: "Are You sure ?" }, :onclick => "return confirm('Are You sure ?')" %>
+        <% end %>
+        <%#= link_to 'Destroy', registration_path(current_user), class: 'btn btn-danger ml-auto', method: :delete, data: { confirm: 'Are you sure?' } %>
+        
+        <a href="#" class="btn btn-warning t-white" data-dismiss="modal" data-toggle="modal" data-target="#ModalResetPassword">
+          <%= t('change_password') %>
+        </a>
+        
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <%= t('close') %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

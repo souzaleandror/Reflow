@@ -1,0 +1,11 @@
+<div class="form-inline mt-2 mt-md-0 pull-right" id="navbarResponsive">
+  <ul class="flag">
+    <% @v_idioms.each do |idiom| %>
+      <li class="d-inline">
+        <%= link_to( idiom.url, :class => 'rounded') do %>
+          <%= image_tag idiom.svg, width: 24, height: 24, alt: idiom.name, title: idiom.name %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

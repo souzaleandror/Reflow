@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @type_contraction.name %>
+</p>
+
+<p>
+  <strong>Variable name:</strong>
+  <%= @type_contraction.variable_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @type_contraction.description %>
+</p>
+
+<p>
+  <strong>Inactive:</strong>
+  <%= @type_contraction.inactive %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @type_contraction.slug %>
+</p>
+
+<%= link_to 'Edit', edit_type_contraction_path(@type_contraction) %> |
+<%= link_to 'Back', type_contractions_path %>

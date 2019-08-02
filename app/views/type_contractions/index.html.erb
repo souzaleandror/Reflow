@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Type Contractions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Variable name</th>
+      <th>Description</th>
+      <th>Inactive</th>
+      <th>Slug</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @type_contractions.each do |type_contraction| %>
+      <tr>
+        <td><%= type_contraction.name %></td>
+        <td><%= type_contraction.variable_name %></td>
+        <td><%= type_contraction.description %></td>
+        <td><%= type_contraction.inactive %></td>
+        <td><%= type_contraction.slug %></td>
+        <td><%= link_to 'Show', type_contraction %></td>
+        <td><%= link_to 'Edit', edit_type_contraction_path(type_contraction) %></td>
+        <td><%= link_to 'Destroy', type_contraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Type Contraction', new_type_contraction_path %>

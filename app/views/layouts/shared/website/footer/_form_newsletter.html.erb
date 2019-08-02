@@ -1,0 +1,19 @@
+<% if @v_intern_company.newsletter %>
+	<div class="footer-right px-3">
+		<h3 class='mb-3'>Newsletter</h3>
+		<%= form_with(model: newsletter, url: create_newsletter_path, local: true, class: '') do |f| %>
+		
+			<%= f.text_field :name, class: 'col-md-12 col-12 required', placeholder: t('full_name'), required: true, pattern: '.{3,}', maxlength: 40, minlength: 3 %>
+			
+			<%= f.text_field :email, class: 'col-md-12 col-12 required', placeholder: 'Email', required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 40, minlength: 7 %>
+			
+			<%= f.button t('send'), class: 'col-md-12 col-12' %>
+			
+	    <button type="button" class="btn btn-secondary col-md-12 col-12 mt-3" data-toggle="modal" data-target="#ModalCancelNewsletter">
+	      <%= t('cancel_newsletter') %>
+	    </button>
+	    
+		<% end %>
+		<%= render './layouts/shared/website/form/cancel_newsletter' %>
+	</div>
+<% end %>

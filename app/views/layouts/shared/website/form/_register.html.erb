@@ -1,0 +1,108 @@
+<!-- Modal -->
+<div class="modal fade" id="ModalRegister" tabindex="-1" role="dialog" aria-labelledby="exampleModalRegister" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalRegister">
+          <%= t('register') %>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for(resource, as: resource_name, local: true, url: user_registration_path, html: { id: 'form_register', method: :post }) do |f| %>
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup">
+              <%= t('full_name') %>
+            </label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-user"></i>
+                </div>
+              </div>
+              <%= f.text_field :full_name, class: 'form-control', placeholder: t('p_full_name'), required: true, pattern: '.{3,64}', maxlength: 64, minlength: 3, id: 'form_register_full_name', 'data-purpose' => 'full_name', 'aria-invalid' => 'true' %>
+            </div>
+          </div>
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup">
+              <%= t('email') %>
+            </label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-envelope"></i>
+                </div>
+              </div>
+                <%= f.email_field :email, class: 'form-control', placeholder: t('p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_register_email', 'data-purpose' => 'email', 'aria-invalid' => 'true' %>
+            </div>
+          </div>
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup">
+              <%= t('password') %>
+            </label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+                <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: t('p_password'), pattern: '.{6,64}', maxlength: 64, minlength: 6, id: 'form_register_password', 'data-purpose' => 'password', 'aria-invalid' => 'true' %>
+            </div>
+          </div>
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup">
+              <%= t('confirm_password') %>
+            </label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-unlock"></i>
+                </div>
+              </div>
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: t('p_confirm_password'), pattern: '.{6,64}', maxlength: 64, minlength: 6, id: 'form_register_confirm_password', 'data-purpose' => 'password', 'aria-invalid' => 'true' %>
+            </div>
+          </div>
+          <div class="col-auto text-center mt-3">
+            <div class="form-check">
+              <%= f.check_box :newsletter, class: 'form-check-input', checked: 'checked', id: 'form_register_newsletter' %>
+              <label class="form-check-label" for="form_register_newsletter">
+                <%= t('register_newsletter') %>
+              </label>
+            </div>
+          </div>
+          
+          <div class="col-auto text-center mt-3">
+            <div class="form-check">
+              <%= f.check_box :accepted, class: 'form-check-input', checked: 'checked', id: 'form_register_terms_and_privacy' %>
+              <label class="form-check-label" for="form_register_terms_and_privacy">
+                <%= t('accepted') %> 
+                <%= link_to t('term_user'), term_user_path, target: '_blank', class: 'tc' %> 
+                and 
+                <%= link_to t('privacy_policy'), privacy_policy_path, target: '_blank', class: 'tc' %>
+              </label>
+            </div>
+          </div>
+          
+          <div class="col-auto text-center mt-3">
+            <%= f.submit t('register'), class: "btn btn-primary w90", id: 'form_login_btn_register' %>  
+          </div>
+
+          <!--<div class="col-auto text-center mt-3">-->
+          <!--  <p>By signing up, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy.</a></p>-->
+          <!--</div>-->
+          
+        <% end %>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <p>
+          <%= t('already_have_an_account') %> ?
+          <a href="#" class="tc" data-dismiss="modal" data-toggle="modal" data-target="#ModalLogin" >
+            <%= t('login') %>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

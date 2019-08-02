@@ -1,0 +1,39 @@
+<div class="pull-right">
+  <% if ((user_signed_in?) and (@v_intern_company.register_user)) || ((admin_signed_in?) and (@v_intern_company.area_admin)) %>
+    <% if (admin_signed_in?) and (@v_intern_company.area_admin) %>
+      <div class="btn-group mt--4" role="group" aria-label="Basic example">
+        <%= render './layouts/shared/admin/navbar/logout' %>
+      </div>
+    <% end %>
+    <% if (user_signed_in?) and (@v_intern_company.register_user) %>
+    <div class="btn-group mt--4" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#ModalProfile">
+        <%= t('profile') %>
+      </button>
+      <%= render './layouts/shared/website/navbar/logout' %>
+      <%= render './layouts/shared/website/form/profile' %>
+      <%= render './layouts/shared/website/form/reset_password' %>
+    </div>
+    <% end %>
+  <% else %>
+    <div class="btn-group mt--4" role="group" aria-label="Basic example">
+      <% if @v_intern_company.register_user then %>
+        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#ModalLogin">
+          <%= t('login') %>
+        </button>
+      <% end %>
+      <% if @v_intern_company.register_new_user then %>
+        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#ModalRegister">
+          <%= t('register') %>
+        </button>
+      <% end %>
+    </div>
+    <% if @v_intern_company.register_user then %>
+      <%= render './layouts/shared/website/form/login' %>
+      <%= render './layouts/shared/website/form/forget_password' %>
+    <% end %>
+    <% if @v_intern_company.register_new_user then %>
+      <%= render './layouts/shared/website/form/register' %>
+    <% end %>
+  <% end %>
+</div>

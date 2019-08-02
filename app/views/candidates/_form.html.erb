@@ -1,0 +1,122 @@
+<%= form_with(model: candidate, local: true) do |form| %>
+  <% if candidate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+
+      <ul>
+      <% candidate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fullname %>
+    <%= form.text_field :fullname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cellphone %>
+    <%= form.text_field :cellphone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_birth %>
+    <%= form.date_select :date_birth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job_id %>
+    <%= form.text_field :job_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.text_field :file %>
+  </div>
+
+  <div class="field">
+    <%= form.label :linkedin %>
+    <%= form.text_field :linkedin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :portfolio %>
+    <%= form.text_field :portfolio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :short_description %>
+    <%= form.text_area :short_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :accepted %>
+    <%= form.check_box :accepted %>
+  </div>
+
+  <div class="field">
+    <%= form.label :available_change_city %>
+    <%= form.check_box :available_change_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :license_car %>
+    <%= form.check_box :license_car %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_license_car %>
+    <%= form.text_field :type_license_car %>
+  </div>
+
+  <div class="field">
+    <%= form.label :have_car %>
+    <%= form.check_box :have_car %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slug %>
+    <%= form.text_field :slug %>
+  </div>
+
+  <div class="field">
+    <%= form.label :good_profile %>
+    <%= form.check_box :good_profile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :observation %>
+    <%= form.text_field :observation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

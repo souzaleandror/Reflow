@@ -1,0 +1,41 @@
+<!-- Modal -->
+<div class="modal fade" id="ModalCancelNewsletter" tabindex="-1" role="dialog" aria-labelledby="exampleCancelNewsletter" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleCancelNewsletter">
+          <%= t('cancel_newsletter') %>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for(:newsletter, local: true, url: cancel_newsletter_path, html: { method: :post, id: 'form_cancel_newsletter' }) do |f| %>
+          <div class="col-auto">
+            <label class="sr-only" for="form_cancel_newsletter_email">
+              <%= t('email') %>
+            </label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-envelope"></i>
+                </div>
+              </div>
+              <%= f.email_field :email, class: 'form-control', autocomplete: 'email', placeholder: t('p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_cancel_newsletter_email', 'data-purpose' => 'email', 'aria-invalid' => 'true' %>
+            </div>
+          </div>
+          
+          <div class="col-auto text-center mt-3">
+            <%= f.submit t('send'), class: "btn btn-primary w90", id: 'form_cancel_newsletter_btn_cancel_newsletter' %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <%= t('close') %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

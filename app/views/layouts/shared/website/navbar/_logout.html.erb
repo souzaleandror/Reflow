@@ -1,0 +1,3 @@
+<%= form_for(resource, as: resource_name, url: destroy_user_session_path, class: '', html: { method: :delete, id: 'form_logout' }) do |f| %>
+  <%= f.submit t('logout'), class: 'btn btn-secondary btn-sm' %>
+<% end %>

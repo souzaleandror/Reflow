@@ -1,0 +1,117 @@
+<%= form_with(model: job, local: true) do |form| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name_job %>
+    <%= form.text_field :name_job %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department_id %>
+    <%= form.text_field :department_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_id %>
+    <%= form.text_field :company_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_contraction_id %>
+    <%= form.text_field :type_contraction_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role %>
+    <%= form.text_field :role %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mean_activity %>
+    <%= form.text_field :mean_activity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :requirement %>
+    <%= form.text_field :requirement %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desirable %>
+    <%= form.text_field :desirable %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email_send_cv %>
+    <%= form.text_field :email_send_cv %>
+  </div>
+
+  <div class="field">
+    <%= form.label :salary %>
+    <%= form.text_field :salary %>
+  </div>
+
+  <div class="field">
+    <%= form.label :benefits %>
+    <%= form.text_field :benefits %>
+  </div>
+
+  <div class="field">
+    <%= form.label :english %>
+    <%= form.text_field :english %>
+  </div>
+
+  <div class="field">
+    <%= form.label :spanish %>
+    <%= form.text_field :spanish %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity_vacancy %>
+    <%= form.number_field :quantity_vacancy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job_filled %>
+    <%= form.check_box :job_filled %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slug %>
+    <%= form.text_field :slug %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img1 %>
+    <%= form.text_field :img1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :inactive %>
+    <%= form.check_box :inactive %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

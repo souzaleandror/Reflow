@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <% if content_for?(:title) %>
+      <title><%= yield :title %> | Reflow</title>
+    <% else %>
+      <title>Reflow</title>
+    <% end %>
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <%= stylesheet_link_tag 'website/home', media: 'all' %>
+    </head>
+  <body>
+    <!-- Page NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg" id="navbar">
+      <div class="container top-buffer bottom-buffer">
+        <%= render './layouts/shared/website/navbar/brand' %>
+        <%= render './layouts/shared/website/navbar/menu' %>
+      </div>
+    </nav>
+    <!-- /Page NavBar -->
+    
+    <!-- Page Content -->
+    <div class="container top-buffer bottom-buffer">
+      <%= yield %>
+    </div>
+    <!-- /Page Content -->
+    
+    <!-- Page Footer -->
+    <%= render './layouts/shared/website/footer/footer' %>
+    <!-- /Page Footer -->
+  </body>
+  <%= javascript_include_tag 'website/home' %>
+	<script>
+    // Flash Messages
+    $(function(){
+      var notice = "<%= flash[:notice] %>"
+       $.notify(notice, "success" );
+       
+      var error = "<%= flash[:error] %>"
+      $.notify(error, "error" );
+       
+      var alerta = "<%= flash[:alert] %>"
+      $.notify(alerta, "warn" );
+    });
+    
+	</script>
+</html>
